@@ -4,8 +4,12 @@ $(function(){
   $("#solarAge").submit(function(event){
     event.preventDefault();
 
-    let birthDate = $("input#birthDate").val();
+    let birthDate = new Date($("input#birthDate").val());
+    console.log($("input#birthDate").val());
     let currentDate = new Date();
+    let age = new Age(birthDate,currentDate);
+    let secondsOnEarth = age.calculateAgeInSeconds(age.birthDate,age.currentDate);
+
     $("#birthDate").text(birthDate);
     $("#currentDate").text(currentDate);
 
