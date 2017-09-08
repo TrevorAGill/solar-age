@@ -9,7 +9,7 @@ $(function(){
     let currentDate = new Date();
     let age = new Age(birthDate,currentDate);
     let secondsOnEarth = age.calculateAgeInSeconds(age.birthDate,age.currentDate);
-
+    let mercuryAge = age.calculateAgeInMercuryYears(secondsOnEarth);
     $("#birthDate").text(birthDate);
     $("#currentDate").text(currentDate);
 

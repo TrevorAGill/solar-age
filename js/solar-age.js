@@ -13,6 +13,32 @@ export class Age {
     return secondsAliveOnEarth;
   }
 
+  calculateAgeInMercuryYears(secondsAliveOnEarth){
+    const secondsInEarthYear = 31536000;
+    let mercuryAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * .24));
+    return mercuryAge;
+  }
+
+  // calculateAgeInVenusYears(secondsAliveOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let venusAge = secondsAliveOnEarth / (secondsInEarthYear * .24);
+  //   return venusAge;
+  // }
+  //
+  // calculateAgeInMarsYears(secondsAliveOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let marsAge = secondsAliveOnEarth / (secondsInEarthYear * .24);
+  //   return marsAge;
+  // }
+  //
+  // calculateAgeInJupiterYears(secondsAliveOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let jupiterAge = secondsAliveOnEarth / (secondsInEarthYear * .24);
+  //   return jupiterAge;
+  // }
+
+
+
 
 
 
