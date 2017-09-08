@@ -10,25 +10,25 @@ describe('Age', function() {
   it('should test for accurate conversion of age to Mercury Years', function() {
     let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
     let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
-    expect(testAge.calculateAgeInMercuryYears(ageInSeconds)).toEqual(126)
+    expect(testAge.calculateAgeInMercuryYears(ageInSeconds)).toEqual(126.21)
   });
 
   it('should test for accurate conversion of age to Venus Years', function() {
     let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
     let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
-    expect(testAge.calculateAgeInVenusYears(ageInSeconds)).toEqual(48)
+    expect(testAge.calculateAgeInVenusYears(ageInSeconds)).toEqual(48.86)
   });
 
   it('should test for accurate conversion of age to Mars Years', function() {
     let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
     let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
-    expect(testAge.calculateAgeInMarsYears(ageInSeconds)).toEqual(16)
+    expect(testAge.calculateAgeInMarsYears(ageInSeconds)).toEqual(16.11)
   });
 
   it('should test for accurate conversion of age to Jupiter Years', function() {
     let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
     let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
-    expect(testAge.calculateAgeInJupiterYears(ageInSeconds)).toEqual(2)
+    expect(testAge.calculateAgeInJupiterYears(ageInSeconds)).toEqual(2.55)
   });
 
   // it('should test counting of vowels', function() {

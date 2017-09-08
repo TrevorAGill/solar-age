@@ -3,6 +3,7 @@ export class Age {
   constructor(birthDate, currentDate) {
     this.birthDate = birthDate;
     this.currentDate = currentDate;
+    this.remainingLife = 0;
   }
 
   calculateAgeInSeconds(birthDate,currentDate){
@@ -15,26 +16,30 @@ export class Age {
 
   calculateAgeInMercuryYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
-    let mercuryAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * .24));
-    return mercuryAge;
+    let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * .24);
+    let age = parseFloat(ageRaw.toFixed(2));
+    return age;
   }
 
   calculateAgeInVenusYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
-    let venusAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * .62));
-    return venusAge;
+    let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * .62);
+    let age = parseFloat(ageRaw.toFixed(2));
+    return age;
   }
 
   calculateAgeInMarsYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
-    let marsAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * 1.88));
-    return marsAge;
+    let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * 1.88);
+    let age = parseFloat(ageRaw.toFixed(2));
+    return age;
   }
 
   calculateAgeInJupiterYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
-    let jupiterAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * 11.86));
-    return jupiterAge;
+    let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * 11.86);
+    let age = parseFloat(ageRaw.toFixed(2));
+    return age;
   }
 
 

@@ -5,7 +5,9 @@ $(function(){
     event.preventDefault();
 
     let birthDate = new Date($("input#birthDate").val());
-    console.log($("input#birthDate").val());
+    let sex = $("input#sex").val();
+    let country = $("input#country").val();
+
     let currentDate = new Date();
     let age = new Age(birthDate,currentDate);
     let secondsOnEarth = age.calculateAgeInSeconds(age.birthDate,age.currentDate);
@@ -13,6 +15,9 @@ $(function(){
     let venusAge = age.calculateAgeInVenusYears(secondsOnEarth);
     let marsAge = age.calculateAgeInMarsYears(secondsOnEarth);
     let jupiterAge = age.calculateAgeInJupiterYears(secondsOnEarth);
+
+
+    
     $("#birthDate").text(birthDate);
     $("#currentDate").text(currentDate);
 
