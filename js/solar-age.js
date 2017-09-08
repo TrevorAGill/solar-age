@@ -19,11 +19,11 @@ export class Age {
     return mercuryAge;
   }
 
-  // calculateAgeInVenusYears(secondsAliveOnEarth){
-  //   const secondsInEarthYear = 31536000;
-  //   let venusAge = secondsAliveOnEarth / (secondsInEarthYear * .24);
-  //   return venusAge;
-  // }
+  calculateAgeInVenusYears(secondsAliveOnEarth){
+    const secondsInEarthYear = 31536000;
+    let venusAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * .62));
+    return venusAge;
+  }
   //
   // calculateAgeInMarsYears(secondsAliveOnEarth){
   //   const secondsInEarthYear = 31536000;
