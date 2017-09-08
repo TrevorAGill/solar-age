@@ -31,36 +31,11 @@ describe('Age', function() {
     expect(testAge.calculateAgeInJupiterYears(ageInSeconds)).toEqual(2.55)
   });
 
-  // it('should test counting of vowels', function() {
-  //   let haiku = new Haiku("This is a sentence", "Yes it is", "It is indeed")
-  //   let letterArray = haiku.splitEachWordIntoArray("install")
-  //   expect(haiku.countVowels(letterArray)).toEqual(2)
-  // });
-  //
-  // it('should test counting of silent vowels when two vowels are together', function() {
-  //   let haiku = new Haiku("This is a sentence", "Yes it is", "It is indeed")
-  //   let letterArray = haiku.splitEachWordIntoArray("peel")
-  //   expect(haiku.isSilentTwoVowelsTogether(letterArray)).toEqual(1)
-  // });
-  //
-  // it('should test counting of silent vowels when ends with e, but not after l', function() {
-  //   let haiku = new Haiku("This is a sentence", "Yes it is", "It is indeed")
-  //   let letterArray = haiku.splitEachWordIntoArray("cave")
-  //   let vowelCount = haiku.countVowels(letterArray)
-  //   expect(vowelCount - haiku.isSilentEndsInE(letterArray)).toEqual(1)
-  // });
-  //
-  // it('should test counting of silent vowels when ends with e', function() {
-  //   let haiku = new Haiku("This is a sentence", "Yes it is", "It is indeed")
-  //   let letterArray = haiku.splitEachWordIntoArray("little")
-  //   let vowelCount = haiku.countVowels(letterArray)
-  //   expect(vowelCount - haiku.isSilentEndsInE(letterArray)).toEqual(2)
-  // });
-  //
-  // it('should test counting all syllables in a line', function() {
-  //   let haiku = new Haiku("", "Yes it is", "It is indeed")
-  //   let lineArray = haiku.translateLineToArray(haiku.line1)
-  //   expect(haiku.loopThroughAllWords(lineArray)).toEqual(5)
-  // });
+  it('should test that API url is returned in correct format', function() {
+    let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
+    let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
+    let apiUrl = testAge.craftApiUrl("male","United%20States")
+    expect(testAge.craftApiUrl("male","United%20States")).toEqual("http://api.population.io:80/1.0/life-expectancy/remaining/male/United%20States/2017-09-08/30y3m/")
+  });
 
 });
