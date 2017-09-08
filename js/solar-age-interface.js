@@ -1,33 +1,19 @@
 import {Age} from './../js/solar-age.js'
 
-jQuery.when(
-    jQuery.getJSON('http://api.population.io:80/1.0/life-expectancy/remaining/male/United%20Kingdom/2001-05-11/49y2m/')
-).done( function(json) {
-    var apiArray = (json);
-    var expectedRemainingLife = apiArray.remaining_life_expectancy
-    console.log(expectedRemainingLife);
-});
-;
 
 
-
-// var test = $.getJSON('http://api.population.io:80/1.0/life-expectancy/remaining/male/United%20Kingdom/2001-05-11/49y2m/', function(data) {
-// //data is the JSON string
-// });
-// var remainingLifeTest = test.responseJSON;
-// console.log(test);
 
 $(function(){
   $("#solarAge").submit(function(event){
     event.preventDefault();
 
-    let birthDate = new Date($("input#birthDate").val());
-    var sex = $("input#sex").val();
-    var country = $("input#country").val();
+    let birthDate = new Date($("#birthDate").val());
+    let sex = $("#sex").val();
+    let country = $("#country").val();
     let currentDate = new Date();
     let age = new Age(birthDate,currentDate);
     let apiUrl = age.craftApiUrl(sex,country)
-    alert(apiUrl);
+    let remainLife = age.calculateRemainingLifeInEarthYears(apiUrl)
 
 
 
@@ -37,7 +23,7 @@ $(function(){
     let marsAge = age.calculateAgeInMarsYears(secondsOnEarth);
     let jupiterAge = age.calculateAgeInJupiterYears(secondsOnEarth);
 
-    // let remainingLife = age.calculateRemainingLifeInSeconds()
+
 
     $("#birthDate").text(birthDate);
     $("#currentDate").text(currentDate);

@@ -59,8 +59,19 @@ export class Age {
   craftApiUrl(sex,country){
     let currentDateAPIRequiredFormat = this.convertCurrentDateToAPIFormat();
     let ageAPIRequiredFormat = this.convertAgeToAPIFormat();
+    debugger;
     let url = "http://api.population.io:80/1.0/life-expectancy/remaining/" + sex + "/" + country + "/" + currentDateAPIRequiredFormat + "/" + ageAPIRequiredFormat + "/"
     return url;
+  }
+
+  calculateRemainingLifeInEarthYears(url){
+    jQuery.when(
+        jQuery.getJSON(url)
+    ).done( function(json) {
+        var apiArray = (json);
+        var expectedRemainingLife = apiArray.remaining_life_expectancy
+        alert(expectedRemainingLife);
+    });
   }
 
 
