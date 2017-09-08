@@ -24,18 +24,18 @@ export class Age {
     let venusAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * .62));
     return venusAge;
   }
-  //
+
   calculateAgeInMarsYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
     let marsAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * 1.88));
     return marsAge;
   }
-  //
-  // calculateAgeInJupiterYears(secondsAliveOnEarth){
-  //   const secondsInEarthYear = 31536000;
-  //   let jupiterAge = secondsAliveOnEarth / (secondsInEarthYear * .24);
-  //   return jupiterAge;
-  // }
+
+  calculateAgeInJupiterYears(secondsAliveOnEarth){
+    const secondsInEarthYear = 31536000;
+    let jupiterAge = Math.floor(secondsAliveOnEarth / (secondsInEarthYear * 11.86));
+    return jupiterAge;
+  }
 
 
 

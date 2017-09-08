@@ -25,6 +25,12 @@ describe('Age', function() {
     expect(testAge.calculateAgeInMarsYears(ageInSeconds)).toEqual(16)
   });
 
+  it('should test for accurate conversion of age to Jupiter Years', function() {
+    let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
+    let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
+    expect(testAge.calculateAgeInJupiterYears(ageInSeconds)).toEqual(2)
+  });
+
   // it('should test counting of vowels', function() {
   //   let haiku = new Haiku("This is a sentence", "Yes it is", "It is indeed")
   //   let letterArray = haiku.splitEachWordIntoArray("install")
