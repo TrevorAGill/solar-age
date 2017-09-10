@@ -14,6 +14,13 @@ export class Age {
     return secondsAliveOnEarth;
   }
 
+  calculateAgeInEarthYears(secondsAliveOnEarth){
+    const secondsInEarthYear = 31536000;
+    let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * 1.00);
+    let age = parseFloat(ageRaw.toFixed(2));
+    return age;
+  }
+
   calculateAgeInMercuryYears(secondsAliveOnEarth){
     const secondsInEarthYear = 31536000;
     let ageRaw = secondsAliveOnEarth / (secondsInEarthYear * 0.24);

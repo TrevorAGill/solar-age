@@ -1,3 +1,18 @@
-.well {
+body{
+ background: url("../images/background.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ color: white;
+}
+
+.well{
+  margin-top: 25px;
   display: none;
+  background-color: black;
+  color: white;
+}
+
+.col-md-2,.col-md-4{
+  text-align: center;
 }

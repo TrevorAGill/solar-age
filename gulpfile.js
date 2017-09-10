@@ -7,6 +7,7 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
+var htmlReplace = require('gulp-html-replace');
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
@@ -95,6 +96,14 @@ gulp.task('serve', function() {
   });
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
+});
+
+gulp.task('build:index', function() {
+  gulp.src('app/index.html')
+    .pipe(htmlReplace({
+        'app-css' : 'css/main.css',
+    }))
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){

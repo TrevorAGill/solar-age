@@ -3,6 +3,7 @@ import {Age} from './../js/solar-age.js';
 $(function(){
   $("#solarAge").submit(function(event){
     event.preventDefault();
+    $('#solarAge').children('input').val('')
     $(".well").show();
     let birthDate = new Date($("#birthDate").val());
     let sex = $("#sex").val();
@@ -11,15 +12,16 @@ $(function(){
     let age = new Age(birthDate,currentDate);
     let apiUrl = age.craftApiUrl(sex,country);
     let secondsOnEarth = age.calculateAgeInSeconds();
+    let earthAge = age.calculateAgeInEarthYears(secondsOnEarth);
     let mercuryAge = age.calculateAgeInMercuryYears(secondsOnEarth);
     let venusAge = age.calculateAgeInVenusYears(secondsOnEarth);
     let marsAge = age.calculateAgeInMarsYears(secondsOnEarth);
     let jupiterAge = age.calculateAgeInJupiterYears(secondsOnEarth);
-    $(".ageMercury").append(mercuryAge);
-    $(".ageVenus").append(venusAge);
-    $(".ageEarth").append(age);
-    $(".ageMars").append(marsAge);
-    $(".ageJupiter").append(jupiterAge);
+    $(".ageMercury").text(mercuryAge);
+    $(".ageVenus").text(venusAge);
+    $(".ageEarth").text(earthAge);
+    $(".ageMars").text(marsAge);
+    $(".ageJupiter").text(jupiterAge);
 
     // let remainingYearsOnEarth = calculateRemainingLifeInEarthYears(apiUrl);
     // let remainingYearsOnEarth = slimDownJSON(apiUrl, getJSON);
@@ -71,11 +73,11 @@ $(function(){
       let remainingYearsEarth = (remainingYears).toFixed(2);
       let remainingYearsMars = (remainingYears / 1.88).toFixed(2);
       let remainingYearsJupiter = (remainingYears / 11.86).toFixed(2);
-      $(".remainingMercury").append(remainingYearsMercury);
-      $(".remainingVenus").append(remainingYearsVenus);
-      $(".remainingEarth").append(remainingYearsEarth);
-      $(".remainingMars").append(remainingYearsMars);
-      $(".remainingJupiter").append(remainingYearsJupiter);
+      $(".remainingMercury").text(remainingYearsMercury);
+      $(".remainingVenus").text(remainingYearsVenus);
+      $(".remainingEarth").text(remainingYearsEarth);
+      $(".remainingMars").text(remainingYearsMars);
+      $(".remainingJupiter").text(remainingYearsJupiter);
     });
 
 
