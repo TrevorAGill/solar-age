@@ -13,16 +13,16 @@
       <form id="solarAge">
         <div class="form-group">
           <label for="birthDate">Your birthday</label>
-          <input id="birthDate" class="form-control" type="date">
+          <input id="birthDate" class="form-control" type="date" min="0" required>
         </div>
         <div class="form-group">
-          <select class="form-control" id="sex">
+          <select class="form-control" id="sex" required>
             <option>male</option>
             <option>female</option>
           </select>
         </div>
         <div class="form-group">
-          <select class="form-control" id="country">
+          <select class="form-control" id="country" required>
             <option>Afghanistan</option>
           	<option>Albania</option>
           	<option>Algeria</option>
@@ -204,18 +204,43 @@
         </div>
         <button type="submit" class="btn">Calculate your age</button>
       </form>
-      <div id="birthDate">
+      <div class="well">
+        <div class="row">
+          <div class="col-md-2">
+            <h4>Current Age:</h4>
+            <div class="ageMercury">
+            </div>
+            <h4>Expected Years Remaining:</h4>
+            <div class="remainingMercury">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="ageVenus">
+            </div>
+            <div class="remainingVenus">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="ageEarth">
+            </div>
+            <div class="remainingEarth">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="ageMars">
+            </div>
+            <div class="remainingMars">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="ageJupiter">
+            </div>
+            <div class="remainingJupiter">
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="currentDate">
-      </div>
-      <div id="venusAge">
-      </div>
-      <div id="mercuryAge">
-      </div>
-      <div id="marsAge">
-      </div>
-      <div id="jupiterAge">
-      </div>
+
     </div>
   </body>
 </html>

@@ -59,41 +59,144 @@ export class Age {
   craftApiUrl(sex,country){
     let currentDateAPIRequiredFormat = this.convertCurrentDateToAPIFormat();
     let ageAPIRequiredFormat = this.convertAgeToAPIFormat();
-    let url = "http://api.population.io:80/1.0/life-expectancy/remaining/" + sex + "/" + country + "/" + currentDateAPIRequiredFormat + "/" + ageAPIRequiredFormat + "/"
+    let url = "http://api.population.io:80/1.0/life-expectancy/remaining/" + sex + "/" + country + "/" + currentDateAPIRequiredFormat + "/" + ageAPIRequiredFormat + "/";
     return url;
   }
 
-  calculateRemainingLifeInEarthYears(url){
-    jQuery.when(
-        jQuery.getJSON(url)
-    ).done( function(json) {
-        var apiArray = (json);
-        var expectedRemainingLife = apiArray.remaining_life_expectancy
-        alert(expectedRemainingLife);
+
+  // myCallback(data){
+  //   let remainingLifeExpectancy = data.remaining_life_expectancy;
+  //   fn(remainingLifeExpectancy);
+  // }
+
+  getAPIData(apiUrl,fn){
+    $.ajax({
+      url: apiUrl,
+      dataType: 'JSON',
+      type: 'GET',
+      success: function(data) {
+        let remainingLifeExpectancy = data.remaining_life_expectancy;
+        fn(remainingLifeExpectancy);
+      }
     });
   }
 
-  calculateRemainingLifeInMercuryYears(remainingYearsOnEarth){
-    let remainingYears = remainingYearsOnEarth * (1 / 0.24);
-    return remainingYears;
-  }
+  // calculateRemainingLifeInEarthYears(url){
+  //   jQuery.when(
+  //       jQuery.getJSON(url)
+  //   ).done( function(json) {
+  //       var apiArray = (json);
+  //       expectedRemainingLife = apiArray.remaining_life_expectancy;
+  //       dothis(expectedRemainingLife);
+  //       return expectedRemainingLife;
+  //   });
+  //   return expectedRemainingLife;
+  // }
+  //
+  // dothis(expectedRemainingLife){
+  //   console.log(expectedRemainingLife);
+  // }
+  //
+  //
+  //
+  // getJSON(url, json){
+  //     var apiArray = (json);
+  //     expectedRemainingLife = apiArray.remaining_life_expectancy;
+  //     return expectedRemainingLife;
+  // }
+  //
+  // slimDownJSON(url, callback){
+  //
+  //   return callback(url)
+  //   jQuery.when(
+  //     jQuery.getJSON(url)
+  // ).done(function(json) {
+  //       var apiArray = (json);
+  //       expectedRemainingLife = apiArray.remaining_life_expectancy;
+  //       return expectedRemainingLife;
+  //   });
+  // }
 
-  calculateRemainingLifeInVenusYears(remainingYearsOnEarth){
-    const secondsInEarthYear = 31536000;
-    let remainingYears = remainingYearsOnEarth * (1 / 0.62);
-    return remainingYears;
-  }
+//interface call
 
-  calculateRemainingLifeInMarsYears(remainingYearsOnEarth){
-    const secondsInEarthYear = 31536000;
-    let remainingYears = remainingYearsOnEarth * 1.88;
-    return remainingYears;
-  }
 
-  calculateRemainingLifeInJupiterYears(remainingYearsOnEarth){
-    const secondsInEarthYear = 31536000;
-    let remainingYears = remainingYearsOnEarth * 11.86;
-    return remainingYears;
-  }
+
+
+  // calculateRemainingLifeInEarthYears(json){
+  //   var apiArray = (json);
+  //   expectedRemainingLife = apiArray.remaining_life_expectancy;
+  //   return expectedRemainingLife;
+  // }
+
+  //   calculateRemainingLifeInEarthYears(function(result) {
+  //     // 5. Received the result from the async function,
+  //     //    now do whatever you want with it:
+  //     alert(result);
+  // });
+  //
+  // function   calculateRemainingLifeInEarthYears(callback) {
+  //     // 3. Start async operation:
+  //     setTimeout(function() {
+  //         // 4. Finished async operation,
+  //         //    call the callback passing the result as argument
+  //         callback('Nya');
+  //     }, Math.random() * 2000);
+  // }
+
+  // calculateRemainingLifeInEarthYears(url){
+  //   var expectedRemainingLife;
+  //   jQuery.when(
+  //       jQuery.getJSON(url)
+  //   ).done( function(json) {
+  //       var apiArray = (json);
+  //       expectedRemainingLife = apiArray.remaining_life_expectancy;
+  //       alert(expectedRemainingLife);
+  //   });
+  //   alert(expectedRemainingLife);
+  //   return expectedRemainingLife;
+  // }
+
+
+//   function aFunc() {
+//      var result;
+//      object.event = function() {
+//         result = true;
+//      };
+//      object.event();
+//      return result;
+//   }
+//
+//
+//
+//   function aFunc(callback) {
+//    object.event = function() {
+//       var result = true;
+//       callback(result);
+//    };
+// }
+
+  //
+  // calculateRemainingLifeInMercuryYears(remainingYearsOnEarth){
+  //   let remainingYears = remainingYearsOnEarth * (1 / 0.24);
+  //   return remainingYears;
+  // }
+  //
+  // calculateRemainingLifeInVenusYears(remainingYearsOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let remainingYears = remainingYearsOnEarth * (1 / 0.62);
+  //   return remainingYears;
+  // }
+  //
+  // calculateRemainingLifeInMarsYears(remainingYearsOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let remainingYears = remainingYearsOnEarth * 1.88;
+  //   return remainingYears;
+  // }
+  //
+  // calculateRemainingLifeInJupiterYears(remainingYearsOnEarth){
+  //   const secondsInEarthYear = 31536000;
+  //   let remainingYears = remainingYearsOnEarth * 11.86;
+  //   return remainingYears;
+  // }
 
 }
