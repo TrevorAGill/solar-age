@@ -38,4 +38,12 @@ describe('Age', function() {
     expect(testAge.craftApiUrl("male","United%20States")).toEqual("http://api.population.io:80/1.0/life-expectancy/remaining/male/United%20States/2017-09-08/30y3m/")
   });
 
+  //would like to know if thi
+  // it('should test that API correctly returns expected remaining life', function() {
+  //   let testAge = new Age(new Date("1987-06-02"),new Date("2017-09-08"))
+  //   let ageInSeconds = testAge.calculateAgeInSeconds(testAge.birthDate,testAge.currentDate)
+  //   expect(testAge.getAPIData('http://api.population.io:80/1.0/life-expectancy/remaining/male/United%20States/2017-09-08/30y3m/',function(remainingYears){
+  //     (remainingYears / 0.24).toFixed(2)}).toEqual(30)
+  // });
+
 });

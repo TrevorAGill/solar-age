@@ -16,3 +16,7 @@ body{
 .col-md-2,.col-md-4{
   text-align: center;
 }
+
+#country,#sex,#birthDate{
+  width: 300px;
+}
