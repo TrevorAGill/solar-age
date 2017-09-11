@@ -10,7 +10,7 @@ _A calculator for determining your "solar age" on other planets in our solar sys
 
 ## Setup/Installation Requirements
 * Clone the repo
-* Go to 'localhost:4567' in your preferred browser to launch the application
+* Open index.html in your preferred browser to launch the application
 
 ## Specifications
 
