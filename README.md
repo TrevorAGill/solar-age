@@ -29,6 +29,10 @@ _A calculator for determining your "solar age" on other planets in our solar sys
 # Known Bugs
 _Life expectancy data for a few of the countries in the picklist might not be retrievable via api.population.io._
 
+# Potential Future Improvements
+* tab navigation layout, so that the statistics for each planet reside on a different tab
+* support for Saturn, Uranus, Neptune, and Pluto
+* add ability to calculate how fast you would need to travel to make it to each planet before you're expected to die (for bucket-list planning)
 
 ## Technologies Used
 * javascript

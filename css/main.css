@@ -20,3 +20,7 @@ body{
 #country,#sex,#birthDate{
   width: 300px;
 }
+
+button{
+  color: black;
+}
